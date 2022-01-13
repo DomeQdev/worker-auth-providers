@@ -1,15 +1,10 @@
-import * as queryString from "query-string";
 import { ConfigError, ProviderGetUserError, TokenError } from '../../utils/errors';
 import { parseQuerystring } from '../../utils/helpers';
 
 async function getTokensFromCode(code, { clientId, clientSecret, redirectUrl }) {
   console.log('[redirectUrl]', redirectUrl);
 
-  const params = queryString.stringify({
-    redirect_uri: redirectUrl,
-    code,
-    grant_type: 'authorization_code',
-  });
+  const params = `grant_type=authorization_code&code=${code}&redirect_uri=${redirectUrl}`;
   const token = btoa(`${clientId}:${clientSecret}`);
   const response = await fetch(`https://accounts.spotify.com/api/token?${params}`, {
     method: 'POST',

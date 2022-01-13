@@ -1,4 +1,3 @@
-import * as queryString from 'query-string';
 import { ConfigError } from '../../utils/errors';
 
 export default async function redirect({ options }) {
@@ -14,14 +13,8 @@ export default async function redirect({ options }) {
 			message: 'No client id passed'
 		});
 	}
-	const params = queryString.stringify({
-		client_id: clientId,
-		redirect_uri: redirectUrl,
-		response_type: responseType,
-		scope,
-		include_granted_scopes: 'true',
-		state
-	});
+
+	const params = `client_id=${clientId}&redirect_uri=${redirectUrl}&response_type=${responseType}&scope=${scope}&include_granted_scopes=true&state=${state}`;
 
 	const url = `https://accounts.google.com/o/oauth2/v2/auth?${params}`;
 	return url;

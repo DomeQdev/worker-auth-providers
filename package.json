@@ -1,23 +1,9 @@
 {
-  "name": "worker-auth-providers",
+  "name": "worker-auth-providers-domeq",
   "version": "0.0.10",
   "type": "module",
   "main": "./src/index.js",
-  "repository": "https://github.com/subhendukundu/worker-auth-providers.git",
-  "author": "subh <subhendukundu14@gmail.com>",
-  "license": "MIT",
-  "devDependencies": {
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.23.4",
-    "eslint-plugin-prettier": "^3.4.0",
-    "prettier": "^2.3.2",
-    "prettier-eslint": "^13.0.0"
-  },
-  "dependencies": {
-    "@aws-sdk/client-sns": "^3.24.0",
-    "jsonwebtoken": "^8.5.1",
-    "query-string": "^7.0.1"
-  }
+  "repository": "https://disk.dog",
+  "author": "domeq",
+  "license": "MIT"
 }
